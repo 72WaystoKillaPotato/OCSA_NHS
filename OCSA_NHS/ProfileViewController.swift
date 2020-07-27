@@ -75,6 +75,8 @@ class ProfileViewController: FormViewController{
             <<< PhoneRow("Phone Number"){
                 $0.title = "Phone Number"
                 $0.add(rule: RuleRequired())
+                $0.add(rule: RuleMinLength(minLength: 11))
+                $0.add(rule: RuleMaxLength(maxLength: 11))
                 $0.placeholder = "10001234567"
             }.cellUpdate { cell, row in
                 if !row.isValid {
@@ -99,11 +101,11 @@ class ProfileViewController: FormViewController{
                     cell.textLabel?.textColor = .systemRed
                 }
             }
-            <<< IntRow("ID"){
+            <<< PhoneRow("ID"){
                 $0.title = "Student ID (last four digits)"
                 $0.add(rule: RuleRequired())
-                $0.add(rule: RuleGreaterThan(min: 999))
-                $0.add(rule: RuleSmallerThan(max: 10000))
+                $0.add(rule: RuleMinLength(minLength: 4))
+                $0.add(rule: RuleMaxLength(maxLength: 4))
             }.cellUpdate { cell, row in
                 if !row.isValid {
                     cell.titleLabel?.textColor = .red
@@ -115,6 +117,7 @@ class ProfileViewController: FormViewController{
                 $0.selectorTitle = "Choose your conservatory"
                 $0.add(rule: RuleRequired())
                 }.onPresent { from, to in
+                    to.modalPresentationStyle = .fullScreen
                     to.dismissOnSelection = true
                     to.dismissOnChange = true
                     to.sectionKeyForValue = { option in
@@ -132,15 +135,17 @@ class ProfileViewController: FormViewController{
                         cell.textLabel?.textColor = .systemRed
                     }
                 }
-        +++ Section(footer: "Note: your profile is final. If changes are necessary, email ziyao.su@ocsarts.net. ")
+        +++ Section(footer: "Note: your profile is final. If changes are necessary, email ziyao.su@ocsarts.net with the title 'APP: Profile Change'")
             <<< ButtonRow() {
                 $0.title = "Submit Profile"
             }
             .onCellSelection { cell, row in
                 print(self.form.values())
-                if row.section?.form?.validate() == nil{
+                if self.form.validate().isEmpty{
                     let profileSender = ProfileSender(profile: self.form.values())
                     profileSender.sendProfile()
+                    let destination = self.storyboard?.instantiateViewController(withIdentifier: "tabBarVC") as! HomeViewController
+                    self.navigationController?.pushViewController(destination, animated: true)
                 }
             }
         }
