@@ -77,30 +77,64 @@
             </objects>
             <point key="canvasLocation" x="3910.144927536232" y="429.91071428571428"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="dAh-jF-25s">
+        <!--Item-->
+        <scene sceneID="vuN-bJ-0tg">
             <objects>
-                <viewController id="qXC-BR-KaO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lpj-5H-bE0">
+                <tableViewController id="o5F-yg-dZP" customClass="ScheduleTableViewController" customModule="OCSA_NHS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fEn-24-Ald">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgK-M6-kwN">
-                                <rect key="frame" x="186" y="438" width="8" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="jCI-w5-bD4"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="VY2-pR-9Qk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SNX-Nl-mjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="pFD-PM-81k" customClass="EventTableViewCell" customModule="OCSA_NHS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="667"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pFD-PM-81k" id="ZIw-Jz-Z7v">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSp-Bl-shk" customClass="RotatedView" customModule="FoldingCell">
+                                            <rect key="frame" x="28" y="19" width="358" height="165"/>
+                                            <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="165" id="KbG-ze-UsB"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QId-7b-g3D">
+                                            <rect key="frame" x="28" y="191" width="358" height="330"/>
+                                            <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="330" id="8ww-J3-bvp"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GSp-Bl-shk" firstAttribute="leading" secondItem="ZIw-Jz-Z7v" secondAttribute="leadingMargin" constant="8" id="6PT-zJ-DTE"/>
+                                        <constraint firstItem="GSp-Bl-shk" firstAttribute="top" secondItem="ZIw-Jz-Z7v" secondAttribute="topMargin" constant="8" id="Jmd-K0-oJa"/>
+                                        <constraint firstItem="QId-7b-g3D" firstAttribute="top" secondItem="ZIw-Jz-Z7v" secondAttribute="topMargin" constant="180" id="b1N-Vk-ZDQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GSp-Bl-shk" secondAttribute="trailing" constant="8" id="erQ-B3-h7O"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QId-7b-g3D" secondAttribute="trailing" constant="8" id="yto-FR-TyL"/>
+                                        <constraint firstItem="QId-7b-g3D" firstAttribute="leading" secondItem="ZIw-Jz-Z7v" secondAttribute="leadingMargin" constant="8" id="zfE-IB-Qhz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="containerView" destination="QId-7b-g3D" id="dQr-gU-CPQ"/>
+                                    <outlet property="containerViewTop" destination="b1N-Vk-ZDQ" id="MS7-dy-Z6x"/>
+                                    <outlet property="foregroundView" destination="GSp-Bl-shk" id="7Ds-ac-EPJ"/>
+                                    <outlet property="foregroundViewTop" destination="Jmd-K0-oJa" id="GTe-dc-Kf3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="o5F-yg-dZP" id="nV2-IV-T5t"/>
+                            <outlet property="delegate" destination="o5F-yg-dZP" id="phs-TJ-EsY"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="Y4O-Oc-naT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f97-KD-61m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3910.144927536232" y="-218.30357142857142"/>
+            <point key="canvasLocation" x="3908.6956521739135" y="-240.40178571428569"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="c1T-y2-ox9">
@@ -112,8 +146,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="qXC-BR-KaO" kind="relationship" relationship="viewControllers" id="kv6-l2-zhR"/>
                         <segue destination="32m-Xi-AnU" kind="relationship" relationship="viewControllers" id="oNn-5g-IvA"/>
+                        <segue destination="o5F-yg-dZP" kind="relationship" relationship="viewControllers" id="h0o-Oi-EDM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6g3-Ox-3Fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
