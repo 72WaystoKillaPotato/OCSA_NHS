@@ -10,24 +10,40 @@ import FoldingCell
 import UIKit
 
 class ScheduleTableViewController: UITableViewController {
-    
-    fileprivate struct C {
-      struct CellHeight {
-        static let close: CGFloat = 80 // equal or greater foregroundView height
+    struct CellHeight {
+        static let close: CGFloat = 185 // equal or greater foregroundView height
         static let open: CGFloat = 461 // equal or greater containerView height
-      }
+        static let cellCount: Int = 5
     }
     
-    var cellHeights = Array(repeating: C.CellHeight.close, count: 1)
+    var cellHeights = Array(repeating: CellHeight.close, count: CellHeight.cellCount)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = CellHeight.close
+        tableView.rowHeight = CellHeight.close
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = UIRefreshControl()
+            tableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
+        }
+        
+        let tempImageView = UIImageView(image: UIImage(named: "background"))
+        tempImageView.frame = self.tableView.frame
+        self.tableView.backgroundView = tempImageView
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc func refreshHandler() {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     // MARK: - Folding Cell config
@@ -42,13 +58,13 @@ class ScheduleTableViewController: UITableViewController {
         }
 
         var duration = 0.0
-        let cellIsCollapsed = cellHeights[indexPath.row] == C.CellHeight.close
+        let cellIsCollapsed = cellHeights[indexPath.row] == CellHeight.close
         if cellIsCollapsed {
-            cellHeights[indexPath.row] = C.CellHeight.open
+            cellHeights[indexPath.row] = CellHeight.open
             cell.unfold(true, animated: true, completion: nil)
             duration = 0.5
         } else {
-            cellHeights[indexPath.row] = C.CellHeight.close
+            cellHeights[indexPath.row] = CellHeight.close
             cell.unfold(false, animated: true, completion: nil)
             duration = 0.8
         }
@@ -61,7 +77,8 @@ class ScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if case let cell as EventTableViewCell = cell {
-            if cellHeights[indexPath.row] == C.CellHeight.close {
+            cell.backgroundColor = .clear
+            if cellHeights[indexPath.row] == CellHeight.close {
                 cell.unfold(false, animated: false, completion: nil)
             } else {
                 cell.unfold(true, animated: false, completion: nil)
@@ -78,13 +95,13 @@ class ScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return CellHeight.cellCount
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
-        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+        let durations: [TimeInterval] = [0.26, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         return cell

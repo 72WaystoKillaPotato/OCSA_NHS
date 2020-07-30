@@ -14,6 +14,11 @@ class EventTableViewCell: FoldingCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        foregroundView.layer.cornerRadius = 10
+        foregroundView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 10
+        containerView.layer.masksToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

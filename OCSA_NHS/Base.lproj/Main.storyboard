@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="2257.971014492754" y="105.80357142857143"/>
         </scene>
-        <!--Item 2-->
+        <!--My NHS Profile-->
         <scene sceneID="uUJ-Zq-bpR">
             <objects>
-                <viewController id="32m-Xi-AnU" sceneMemberID="viewController">
+                <viewController id="32m-Xi-AnU" customClass="MemberProfileViewController" customModule="OCSA_NHS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6zi-xm-2pq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,13 +71,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Q9r-hh-q0Y"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="oiW-03-57E"/>
+                    <tabBarItem key="tabBarItem" title="My NHS Profile" image="person.circle" catalog="system" id="oiW-03-57E"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcC-rD-Tc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3910.144927536232" y="429.91071428571428"/>
         </scene>
-        <!--Item-->
+        <!--Schedule Table View Controller-->
         <scene sceneID="vuN-bJ-0tg">
             <objects>
                 <tableViewController id="o5F-yg-dZP" customClass="ScheduleTableViewController" customModule="OCSA_NHS" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,9 +85,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="7qm-5G-FeY">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10I-bl-nDj">
+                                    <rect key="frame" x="168" y="11" width="79" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="pFD-PM-81k" customClass="EventTableViewCell" customModule="OCSA_NHS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pFD-PM-81k" id="ZIw-Jz-Z7v">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
@@ -95,19 +109,243 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSp-Bl-shk" customClass="RotatedView" customModule="FoldingCell">
                                             <rect key="frame" x="28" y="19" width="358" height="165"/>
-                                            <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vt-iS-IW7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="165"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7/25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaY-Na-G0X">
+                                                            <rect key="frame" x="14" y="24" width="78" height="37"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="06:30 - 07:30 PM" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTY-RN-RCt">
+                                                            <rect key="frame" x="11" y="101" width="81" height="46"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.54806478219999999" blue="0.121139909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Zn3-1o-xAQ"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvb-WY-JZ2">
+                                                    <rect key="frame" x="108" y="8" width="157" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2333 ocsa lane, ocsa, ocsa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPL-tG-KSP">
+                                                    <rect key="frame" x="108" y="44" width="213" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coordinator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYK-FL-IzM">
+                                                    <rect key="frame" x="108" y="103" width="73" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# Slots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blV-LF-164">
+                                                    <rect key="frame" x="191" y="103" width="73" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# Credit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wX4-Z6-0i3">
+                                                    <rect key="frame" x="273" y="103" width="73" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Samm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRs-54-B7R">
+                                                    <rect key="frame" x="108" y="125" width="47" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCw-ta-yfN">
+                                                    <rect key="frame" x="191" y="125" width="20" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efx-aR-umC">
+                                                    <rect key="frame" x="273" y="125" width="11" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="6Vt-iS-IW7" firstAttribute="leading" secondItem="GSp-Bl-shk" secondAttribute="leading" id="EbO-g1-bL9"/>
                                                 <constraint firstAttribute="height" constant="165" id="KbG-ze-UsB"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Vt-iS-IW7" secondAttribute="bottom" id="TCS-X2-pNG"/>
+                                                <constraint firstItem="6Vt-iS-IW7" firstAttribute="top" secondItem="GSp-Bl-shk" secondAttribute="top" id="TI8-Ip-n8d"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QId-7b-g3D">
-                                            <rect key="frame" x="28" y="191" width="358" height="330"/>
-                                            <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="28" y="191" width="358" height="407"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-tb-R61" userLabel="FirstContainerView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="165"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event description. around 20 words? small paragraph" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGg-Yk-QDN">
+                                                            <rect key="frame" x="0.0" y="70" width="358" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2333 ocsa lane, ocsa, ocsa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qau-JV-7DD">
+                                                            <rect key="frame" x="73" y="133" width="213" height="23"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Ag-QV-CZ3">
+                                                            <rect key="frame" x="35" y="135.5" width="30" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="tintColor" red="1" green="0.54806478219999999" blue="0.121139909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="165" id="jTl-9o-loW"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lct-ft-CQO">
+                                                    <rect key="frame" x="20" y="165" width="318" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Jer-OX-kLw"/>
+                                                    </constraints>
+                                                </view>
+                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbp-bq-Ra3" userLabel="SecondContainerView">
+                                                    <rect key="frame" x="0.0" y="166" width="358" height="165"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coordinator: Samm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb3-V8-f2o">
+                                                            <rect key="frame" x="78" y="8" width="147" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email: ziyao.su@ocsarts.net" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0a-fV-xGo">
+                                                            <rect key="frame" x="78" y="33" width="204" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYk-H0-Wct">
+                                                            <rect key="frame" x="94" y="79" width="171" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                            <state key="normal" title="Waiver Link (Age: 18)">
+                                                                <color key="titleColor" red="0.23921568627450979" green="0.30980392156862746" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wav-iv-Z4o">
+                                                            <rect key="frame" x="108" y="122" width="145" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                            <state key="normal" title="SignUpGenius Link">
+                                                                <color key="titleColor" red="0.2405233681" green="0.31010201570000001" blue="0.77651196720000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </state>
+                                                        </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5cW-wv-Ire">
+                                                            <rect key="frame" x="16" y="15.5" width="54" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="tintColor" red="1" green="0.54806478219999999" blue="0.121139909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="165" id="9Db-W4-Foz"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-mV-HPL">
+                                                    <rect key="frame" x="0.0" y="331" width="358" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="qWg-GP-aQD"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-s1-ofD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="60"/>
+                                                    <color key="backgroundColor" red="1" green="0.54806478219999999" blue="0.121139909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="Ozv-zy-E3u"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C02-KX-vw1" userLabel="ThirdContainerView">
+                                                    <rect key="frame" x="0.0" y="332" width="358" height="75"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcs-Yn-yc1">
+                                                            <rect key="frame" x="29" y="8" width="301" height="59"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.2405233681" green="0.31010201570000001" blue="0.77651196720000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Complete"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <segue destination="fCx-bz-6X2" kind="show" id="5Cx-AV-7re"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="330" id="8ww-J3-bvp"/>
+                                                <constraint firstAttribute="bottom" secondItem="C02-KX-vw1" secondAttribute="bottom" id="10F-iI-3IP"/>
+                                                <constraint firstItem="qqQ-mV-HPL" firstAttribute="leading" secondItem="QId-7b-g3D" secondAttribute="leading" id="2NG-pQ-TdP"/>
+                                                <constraint firstAttribute="height" constant="407" id="8ww-J3-bvp"/>
+                                                <constraint firstItem="Deu-s1-ofD" firstAttribute="leading" secondItem="QId-7b-g3D" secondAttribute="leading" id="Bg9-A1-2Tw"/>
+                                                <constraint firstItem="xF8-tb-R61" firstAttribute="leading" secondItem="QId-7b-g3D" secondAttribute="leading" id="GSb-fa-XHV"/>
+                                                <constraint firstItem="jbp-bq-Ra3" firstAttribute="top" secondItem="Lct-ft-CQO" secondAttribute="bottom" id="HNk-rD-3TO"/>
+                                                <constraint firstItem="C02-KX-vw1" firstAttribute="top" secondItem="qqQ-mV-HPL" secondAttribute="bottom" id="Io0-Zm-Ico"/>
+                                                <constraint firstAttribute="trailing" secondItem="qqQ-mV-HPL" secondAttribute="trailing" id="LTP-e5-dhd"/>
+                                                <constraint firstItem="Lct-ft-CQO" firstAttribute="leading" secondItem="QId-7b-g3D" secondAttribute="leading" constant="20" id="O9m-Gh-LP8"/>
+                                                <constraint firstAttribute="trailing" secondItem="C02-KX-vw1" secondAttribute="trailing" id="QYL-f6-Zhe"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lct-ft-CQO" secondAttribute="trailing" constant="20" id="Qta-FU-9eg"/>
+                                                <constraint firstAttribute="trailing" secondItem="jbp-bq-Ra3" secondAttribute="trailing" id="SWr-29-17W"/>
+                                                <constraint firstItem="xF8-tb-R61" firstAttribute="top" secondItem="QId-7b-g3D" secondAttribute="top" id="gtz-0O-XPi"/>
+                                                <constraint firstItem="Deu-s1-ofD" firstAttribute="top" secondItem="QId-7b-g3D" secondAttribute="top" id="gy2-9j-yOq"/>
+                                                <constraint firstAttribute="trailing" secondItem="xF8-tb-R61" secondAttribute="trailing" id="iYs-1d-LNJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Deu-s1-ofD" secondAttribute="trailing" id="kAT-eF-CyS"/>
+                                                <constraint firstItem="jbp-bq-Ra3" firstAttribute="leading" secondItem="QId-7b-g3D" secondAttribute="leading" id="kfa-yd-urU"/>
+                                                <constraint firstItem="C02-KX-vw1" firstAttribute="leading" secondItem="QId-7b-g3D" secondAttribute="leading" id="rSv-EX-6iC"/>
+                                                <constraint firstItem="qqQ-mV-HPL" firstAttribute="top" secondItem="jbp-bq-Ra3" secondAttribute="bottom" id="uDe-aB-04C"/>
+                                                <constraint firstItem="Lct-ft-CQO" firstAttribute="top" secondItem="xF8-tb-R61" secondAttribute="bottom" id="y8T-W5-wlb"/>
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="GSp-Bl-shk" firstAttribute="leading" secondItem="ZIw-Jz-Z7v" secondAttribute="leadingMargin" constant="8" id="6PT-zJ-DTE"/>
                                         <constraint firstItem="GSp-Bl-shk" firstAttribute="top" secondItem="ZIw-Jz-Z7v" secondAttribute="topMargin" constant="8" id="Jmd-K0-oJa"/>
@@ -117,6 +355,11 @@
                                         <constraint firstItem="QId-7b-g3D" firstAttribute="leading" secondItem="ZIw-Jz-Z7v" secondAttribute="leadingMargin" constant="8" id="zfE-IB-Qhz"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="containerView" destination="QId-7b-g3D" id="dQr-gU-CPQ"/>
                                     <outlet property="containerViewTop" destination="b1N-Vk-ZDQ" id="MS7-dy-Z6x"/>
@@ -130,11 +373,27 @@
                             <outlet property="delegate" destination="o5F-yg-dZP" id="phs-TJ-EsY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Y4O-Oc-naT"/>
+                    <navigationItem key="navigationItem" id="neH-Gl-1Xk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f97-KD-61m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3908.6956521739135" y="-240.40178571428569"/>
+            <point key="canvasLocation" x="4697" y="-240"/>
+        </scene>
+        <!--Complete Event View Controller-->
+        <scene sceneID="ITw-sU-xBK">
+            <objects>
+                <viewController id="fCx-bz-6X2" customClass="CompleteEventViewController" customModule="OCSA_NHS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2oy-zA-r4d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vLt-ri-X1z"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A7E-6U-E76"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I9K-SY-b7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5503" y="-240"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="c1T-y2-ox9">
@@ -146,8 +405,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="oAP-Hm-Ibo" kind="relationship" relationship="viewControllers" id="h0o-Oi-EDM"/>
                         <segue destination="32m-Xi-AnU" kind="relationship" relationship="viewControllers" id="oNn-5g-IvA"/>
-                        <segue destination="o5F-yg-dZP" kind="relationship" relationship="viewControllers" id="h0o-Oi-EDM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6g3-Ox-3Fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -172,5 +431,31 @@
             </objects>
             <point key="canvasLocation" x="1483" y="106"/>
         </scene>
+        <!--My Events-->
+        <scene sceneID="NxN-tR-Nfj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oAP-Hm-Ibo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Events" image="calendar" catalog="system" id="Y4O-Oc-naT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PMX-7X-aR9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o5F-yg-dZP" kind="relationship" relationship="rootViewController" id="AFH-6X-9ti"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2i-hC-Ya0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3908.6956521739135" y="-240.40178571428569"/>
+        </scene>
     </scenes>
+    <color key="tintColor" red="0.2405233681" green="0.31010201570000001" blue="0.77651196720000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="location" catalog="system" width="128" height="115"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
