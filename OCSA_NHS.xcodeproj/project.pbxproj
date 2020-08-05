@@ -22,6 +22,7 @@
 		85612E0D24C383250083B7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85612E0B24C383250083B7D0 /* Main.storyboard */; };
 		85612E0F24C383290083B7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85612E0E24C383290083B7D0 /* Assets.xcassets */; };
 		85612E1224C383290083B7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85612E1024C383290083B7D0 /* LaunchScreen.storyboard */; };
+		8578857B24DA6EB40025A5E0 /* ProfileFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */; };
 		B3A09B68008EE4AB4BBFABE2 /* Pods_OCSA_NHS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E568624C52462D9128FA0B64 /* Pods_OCSA_NHS.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		85612E0E24C383290083B7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85612E1124C383290083B7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85612E1324C383290083B7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFetcher.swift; sourceTree = "<group>"; };
 		E568624C52462D9128FA0B64 /* Pods_OCSA_NHS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCSA_NHS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */,
 				85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */,
 				85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */,
+				8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */,
 				85466ADC24D2555B00F64AC0 /* Event.swift */,
 				85612E0B24C383250083B7D0 /* Main.storyboard */,
 				85612E0E24C383290083B7D0 /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 				85466AD924D20CB800F64AC0 /* MemberProfileViewController.swift in Sources */,
 				851E311B24C3F7A90082D347 /* ProfileViewController.swift in Sources */,
 				85466ADD24D2555B00F64AC0 /* Event.swift in Sources */,
+				8578857B24DA6EB40025A5E0 /* ProfileFetcher.swift in Sources */,
 				85612E0624C383250083B7D0 /* AppDelegate.swift in Sources */,
 				85612E0824C383250083B7D0 /* SceneDelegate.swift in Sources */,
 				85466ADF24D28B6000F64AC0 /* CompleteEventViewController.swift in Sources */,

@@ -7,7 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class MemberProfileViewController: UIViewController{
     
+    @IBAction func signOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+            do {
+              try firebaseAuth.signOut()
+                self.dismiss(animated: true, completion: nil)
+                print("signed out")
+            } catch let signOutError as NSError {
+              print ("Error signing out: %@", signOutError)
+            }
+    }
 }

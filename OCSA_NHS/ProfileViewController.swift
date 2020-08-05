@@ -145,6 +145,7 @@ class ProfileViewController: FormViewController{
                     let profileSender = ProfileSender(profile: self.form.values())
                     profileSender.sendProfile()
                     let destination = self.storyboard?.instantiateViewController(withIdentifier: "tabBarVC") as! HomeViewController
+                    destination.navigationController?.setNavigationBarHidden(false, animated: true)
                     self.navigationController?.pushViewController(destination, animated: true)
                 }
             }

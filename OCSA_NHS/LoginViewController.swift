@@ -40,9 +40,9 @@ class LoginViewController: UIViewController{
     }
     
     fileprivate func segueToVC(){
-        //check if the user has profile stored in Realtime Database
+        //check if  he user has profile stored in Realtime Database
         if let userID = Auth.auth().currentUser?.uid{
-            Database.database().reference().child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            Database.database().reference().child("keys").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 if snapshot.exists(){
                     print("user has already saved a profile")
                     let destination = self.storyboard?.instantiateViewController(withIdentifier: "tabBarVC") as! HomeViewController

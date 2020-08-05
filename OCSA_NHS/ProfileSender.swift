@@ -9,10 +9,6 @@
 import UIKit
 import Firebase
 
-protocol ProfileSenderDelegate {
-    
-}
-
 class ProfileSender: NSObject{
     var profile: [String: Any?]
     
@@ -60,8 +56,9 @@ class ProfileSender: NSObject{
         self.profile["Birthday"] = NSNumber(value: Int(date.timeIntervalSince1970))
 //        if let unixDate = snapshot.value as? Double{
 //        let staticLoginDate = NSDate(timeIntervalSince1970: unixDate) as Date
-        if let uid = Auth.auth().currentUser?.uid{
-            Database.database().reference().child("users").child(uid).setValue(self.profile)
+        if let studentid = self.profile["ID"] as? String, let userid = Auth.auth().currentUser?.uid{
+            Database.database().reference().child("users").child(studentid).setValue(self.profile)
+            Database.database().reference().child("keys").child(userid).setValue(studentid)
             print("finished sending profile")
         }
     }
