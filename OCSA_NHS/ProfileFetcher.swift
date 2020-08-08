@@ -10,10 +10,14 @@ import UIKit
 import Firebase
 
 protocol ProfileUpdatesDelegate: class {
-//    func profile(didFinishFetching: Bool, profile: [String: AnyObject])
+    func profile(didFinishFetching: Bool, firstN: String, lastN: String, credits: [String: String], grade: String)
 }
 
 class ProfileFetcher: NSObject {
+    
+    weak var delegate: ProfileUpdatesDelegate?
+    fileprivate let downloadGroup = DispatchGroup()
+    
     func fetchProfile(){
         guard let ownerID = Auth.auth().currentUser?.uid else { return }
         //get student ID from key
@@ -33,22 +37,59 @@ class ProfileFetcher: NSObject {
     }
     
     fileprivate func unpackProfile(profile: [String: AnyObject]){
-        var age: Int?
+        print("profile = \(profile)")
         var firstName: String?
-        //birthday
-        if let unixDate = profile["Birthday"] as? Double{
-            let birthDate = NSDate(timeIntervalSince1970: unixDate) as Date
-            let ageComponents = Calendar.current.dateComponents([.year], from: birthDate, to: Date())
-            age = ageComponents.year!
+        var credits: [String: String] = [:]
+        var grade: String?
+        
+        guard let creditsUnmapped: [String: Int] = profile["Credits"] as? [String: Int], let gradeInt:String = profile["Grade"] as? String, let lastName = profile["Last Name"] as? String, profile["First Name"] != nil || profile["Preferred Name"] != nil else {
+            print("unpacking profile and found nil/wrong data types.")
+            return
         }
+        
+        //birthday
+//        let unixDate = profile["Birthday"] as? Double
+//        let birthDate = NSDate(timeIntervalSince1970: unixDate) as Date
+//        let ageComponents = Calendar.current.dateComponents([.year], from: birthDate, to: Date())
+//        age = ageComponents.year!
+        
         //preferred name or first name
         if let name = profile["Preferred Name"] as? String{
             firstName = name
         } else {
             firstName = profile["First Name"] as? String
         }
-        
+
         //credits
-//        let credits: []
+        let creditCodes = creditsUnmapped.compactMapValues {Int($0)}
+//        print("creditCodes = \(creditCodes)")
+        for (key, eventKey) in creditCodes{
+            downloadGroup.enter()
+            let keyString = String(eventKey)
+            Database.database().reference().child("events").child(keyString).child("name").observeSingleEvent(of: .value) { (snapshot) in
+                guard snapshot.exists() else {
+                    return
+                }
+                credits[key] = snapshot.value as? String
+                self.downloadGroup.leave()
+            }
+        }
+        self.downloadGroup.notify(queue: .main) {
+            self.delegate?.profile(didFinishFetching: true, firstN: firstName!, lastN: lastName, credits: credits, grade: grade!)
+        }
+        
+        //grade
+        switch gradeInt {
+            case "9":
+                grade = "Freshman"
+            case "10":
+                grade = "Sophomore"
+            case "11":
+                grade = "Junior"
+            case "12":
+                grade = "Senior"
+            default:
+                grade = "Grade Not Found"
+        }
     }
 }

@@ -11,6 +11,8 @@ import Firebase
 
 class MemberProfileViewController: UIViewController{
     
+    let profileFetcher = ProfileFetcher()
+    
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
             do {
@@ -21,4 +23,14 @@ class MemberProfileViewController: UIViewController{
               print ("Error signing out: %@", signOutError)
             }
     }
+    
+    override func viewDidLoad() {
+        profileFetcher.delegate = self
+        profileFetcher.fetchProfile()
+    }
+}
+
+extension MemberProfileViewController: ProfileUpdatesDelegate{
+    func profile(didFinishFetching: Bool, firstN: String, lastN: String, credits: [String : String], grade: String) {
+        print("first name = \(firstN), lastName = \(lastN), credits = \(credits), grade = \(grade)")    }
 }
