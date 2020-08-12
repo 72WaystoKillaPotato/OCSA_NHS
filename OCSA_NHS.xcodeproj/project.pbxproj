@@ -17,6 +17,7 @@
 		85466ADF24D28B6000F64AC0 /* CompleteEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */; };
 		854952E824C6B5C000870512 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854952E724C6B5C000870512 /* HomeViewController.swift */; };
 		854952EC24C6C2FF00870512 /* ProfileSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854952EB24C6C2FF00870512 /* ProfileSender.swift */; };
+		8554AD5824E3A33D009EB04C /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554AD5724E3A33D009EB04C /* Credit.swift */; };
 		85612E0624C383250083B7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85612E0524C383250083B7D0 /* AppDelegate.swift */; };
 		85612E0824C383250083B7D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85612E0724C383250083B7D0 /* SceneDelegate.swift */; };
 		85612E0D24C383250083B7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85612E0B24C383250083B7D0 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		854952E724C6B5C000870512 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		854952EB24C6C2FF00870512 /* ProfileSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSender.swift; sourceTree = "<group>"; };
 		854952ED24C74AD500870512 /* OCSA_NHS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCSA_NHS.entitlements; sourceTree = "<group>"; };
+		8554AD5724E3A33D009EB04C /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
 		85612E0224C383250083B7D0 /* OCSA_NHS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSA_NHS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85612E0524C383250083B7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85612E0724C383250083B7D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,15 @@
 				E568624C52462D9128FA0B64 /* Pods_OCSA_NHS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8554AD5924E3A345009EB04C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85466ADC24D2555B00F64AC0 /* Event.swift */,
+				8554AD5724E3A33D009EB04C /* Credit.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		85612DF924C383250083B7D0 = {
@@ -104,7 +115,7 @@
 				85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */,
 				85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */,
 				8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */,
-				85466ADC24D2555B00F64AC0 /* Event.swift */,
+				8554AD5924E3A345009EB04C /* Model */,
 				85612E0B24C383250083B7D0 /* Main.storyboard */,
 				85612E0E24C383290083B7D0 /* Assets.xcassets */,
 				85612E1024C383290083B7D0 /* LaunchScreen.storyboard */,
@@ -267,6 +278,7 @@
 				85612E0824C383250083B7D0 /* SceneDelegate.swift in Sources */,
 				85466ADF24D28B6000F64AC0 /* CompleteEventViewController.swift in Sources */,
 				85466AD524D15A7B00F64AC0 /* ScheduleTableViewController.swift in Sources */,
+				8554AD5824E3A33D009EB04C /* Credit.swift in Sources */,
 				854952EC24C6C2FF00870512 /* ProfileSender.swift in Sources */,
 				854952E824C6B5C000870512 /* HomeViewController.swift in Sources */,
 			);

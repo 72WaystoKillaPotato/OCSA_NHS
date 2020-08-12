@@ -60,10 +60,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2e-jS-vXj">
-                                <rect key="frame" x="177" y="738" width="60" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyM-M4-WsH" customClass="PieChart" customModule="PieCharts">
+                                <rect key="frame" x="20" y="73" width="374" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Out"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have no completed credits. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLY-oz-lJv">
+                                        <rect key="frame" x="65" y="183" width="247" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="innerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outerRadius">
+                                        <real key="value" value="170"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="referenceAngle">
+                                        <real key="value" value="270"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lw4-Ac-bvm">
+                                <rect key="frame" x="20" y="502" width="374" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8z-CQ-zUF">
+                                <rect key="frame" x="145" y="601" width="124" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2e-jS-vXj">
+                                <rect key="frame" x="176" y="758" width="63" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="signOut:" destination="32m-Xi-AnU" eventType="touchUpInside" id="4pQ-fZ-8Vb"/>
                                 </connections>
@@ -73,10 +115,16 @@
                         <viewLayoutGuide key="safeArea" id="Q9r-hh-q0Y"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My NHS Profile" image="person.circle" catalog="system" id="oiW-03-57E"/>
+                    <connections>
+                        <outlet property="creditPieChart" destination="eyM-M4-WsH" id="eQO-E6-GC7"/>
+                        <outlet property="gradeLabel" destination="a8z-CQ-zUF" id="Iax-Og-Dga"/>
+                        <outlet property="nameLabel" destination="Lw4-Ac-bvm" id="1Dr-jp-hpA"/>
+                        <outlet property="noCreditsLabel" destination="PLY-oz-lJv" id="eTJ-Nh-FDt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcC-rD-Tc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3910.144927536232" y="429.91071428571428"/>
+            <point key="canvasLocation" x="3838" y="834"/>
         </scene>
         <!--Schedule Table View Controller-->
         <scene sceneID="vuN-bJ-0tg">
@@ -86,23 +134,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="7qm-5G-FeY">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10I-bl-nDj">
-                                    <rect key="frame" x="168" y="11" width="79" height="23"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                    <color key="textColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="pFD-PM-81k" customClass="EventTableViewCell" customModule="OCSA_NHS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pFD-PM-81k" id="ZIw-Jz-Z7v">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
@@ -378,7 +412,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f97-KD-61m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4697" y="-240"/>
+            <point key="canvasLocation" x="4680" y="106"/>
         </scene>
         <!--Complete Event View Controller-->
         <scene sceneID="ITw-sU-xBK">
@@ -394,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9K-SY-b7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5503" y="-240"/>
+            <point key="canvasLocation" x="5487" y="106"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="c1T-y2-ox9">
@@ -404,8 +438,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="P3D-rK-9In" kind="relationship" relationship="viewControllers" id="pmh-dn-aHP"/>
                         <segue destination="oAP-Hm-Ibo" kind="relationship" relationship="viewControllers" id="h0o-Oi-EDM"/>
                         <segue destination="32m-Xi-AnU" kind="relationship" relationship="viewControllers" id="oNn-5g-IvA"/>
                     </connections>
@@ -432,6 +470,22 @@
             </objects>
             <point key="canvasLocation" x="1483" y="106"/>
         </scene>
+        <!--Attendance-->
+        <scene sceneID="Szc-xC-ssH">
+            <objects>
+                <viewController id="P3D-rK-9In" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xJY-sN-elG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zGT-2X-97N"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Attendance" image="hand.raised" catalog="system" id="4Vb-zf-NC5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVG-be-4bM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3838" y="-629"/>
+        </scene>
         <!--My Events-->
         <scene sceneID="NxN-tR-Nfj">
             <objects>
@@ -449,12 +503,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2i-hC-Ya0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3908.6956521739135" y="-240.40178571428569"/>
+            <point key="canvasLocation" x="3839" y="106"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.2405233681" green="0.31010201570000001" blue="0.77651196720000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <color key="tintColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="hand.raised" catalog="system" width="128" height="128"/>
         <image name="location" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
