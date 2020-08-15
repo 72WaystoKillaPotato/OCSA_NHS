@@ -10,7 +10,22 @@ import FoldingCell
 import UIKit
 
 class EventTableViewCell: FoldingCell {
-
+    
+    //foreground view elements
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var coordinator: UILabel!
+    @IBOutlet weak var slots: UILabel!
+    @IBOutlet weak var credit: UILabel!
+    
+    //container view elements
+    @IBOutlet weak var eventDescription: UILabel!
+    @IBOutlet weak var waiverLink: UIButton!
+    @IBOutlet weak var signupGeniusLink: UIButton!
+    @IBOutlet weak var coordinatorEmail: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,7 +33,6 @@ class EventTableViewCell: FoldingCell {
         foregroundView.layer.masksToBounds = true
         containerView.layer.cornerRadius = 10
         containerView.layer.masksToBounds = true
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

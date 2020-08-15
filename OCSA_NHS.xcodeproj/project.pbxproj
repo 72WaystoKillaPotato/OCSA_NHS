@@ -24,6 +24,7 @@
 		85612E0F24C383290083B7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85612E0E24C383290083B7D0 /* Assets.xcassets */; };
 		85612E1224C383290083B7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85612E1024C383290083B7D0 /* LaunchScreen.storyboard */; };
 		8578857B24DA6EB40025A5E0 /* ProfileFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */; };
+		85B8FA3024E789D00064A7B8 /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B8FA2F24E789D00064A7B8 /* EventFetcher.swift */; };
 		B3A09B68008EE4AB4BBFABE2 /* Pods_OCSA_NHS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E568624C52462D9128FA0B64 /* Pods_OCSA_NHS.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		85612E1124C383290083B7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85612E1324C383290083B7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFetcher.swift; sourceTree = "<group>"; };
+		85B8FA2F24E789D00064A7B8 /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
 		E568624C52462D9128FA0B64 /* Pods_OCSA_NHS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCSA_NHS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,21 +110,30 @@
 				85612E0724C383250083B7D0 /* SceneDelegate.swift */,
 				851E311824C3F3350082D347 /* LoginViewController.swift */,
 				851E311A24C3F7A90082D347 /* ProfileViewController.swift */,
-				854952EB24C6C2FF00870512 /* ProfileSender.swift */,
 				854952E724C6B5C000870512 /* HomeViewController.swift */,
 				85466AD424D15A7B00F64AC0 /* ScheduleTableViewController.swift */,
 				85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */,
 				85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */,
 				85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */,
-				8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */,
+				85B8FA2E24E7895F0064A7B8 /* Data */,
 				8554AD5924E3A345009EB04C /* Model */,
 				85612E0B24C383250083B7D0 /* Main.storyboard */,
-				85612E0E24C383290083B7D0 /* Assets.xcassets */,
 				85612E1024C383290083B7D0 /* LaunchScreen.storyboard */,
+				85612E0E24C383290083B7D0 /* Assets.xcassets */,
 				85612E1324C383290083B7D0 /* Info.plist */,
 				851E311624C3A6380082D347 /* GoogleService-Info.plist */,
 			);
 			path = OCSA_NHS;
+			sourceTree = "<group>";
+		};
+		85B8FA2E24E7895F0064A7B8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				854952EB24C6C2FF00870512 /* ProfileSender.swift */,
+				8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */,
+				85B8FA2F24E789D00064A7B8 /* EventFetcher.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		DE54B55AF81696DAA581C0A6 /* Pods */ = {
@@ -270,6 +281,7 @@
 			files = (
 				85466AD724D15E8800F64AC0 /* EventTableViewCell.swift in Sources */,
 				851E311924C3F3350082D347 /* LoginViewController.swift in Sources */,
+				85B8FA3024E789D00064A7B8 /* EventFetcher.swift in Sources */,
 				85466AD924D20CB800F64AC0 /* MemberProfileViewController.swift in Sources */,
 				851E311B24C3F7A90082D347 /* ProfileViewController.swift in Sources */,
 				85466ADD24D2555B00F64AC0 /* Event.swift in Sources */,

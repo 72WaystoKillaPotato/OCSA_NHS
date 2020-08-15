@@ -396,10 +396,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="address" destination="NPL-tG-KSP" id="PUK-gR-M3L"/>
                                     <outlet property="containerView" destination="QId-7b-g3D" id="dQr-gU-CPQ"/>
                                     <outlet property="containerViewTop" destination="b1N-Vk-ZDQ" id="MS7-dy-Z6x"/>
+                                    <outlet property="coordinator" destination="IRs-54-B7R" id="ZnJ-Fv-2gR"/>
+                                    <outlet property="coordinatorEmail" destination="R0a-fV-xGo" id="Sh5-Ja-rX3"/>
+                                    <outlet property="credit" destination="efx-aR-umC" id="vmH-Zu-a7g"/>
+                                    <outlet property="date" destination="yaY-Na-G0X" id="MBs-3a-CNx"/>
+                                    <outlet property="eventDescription" destination="hGg-Yk-QDN" id="Lzx-Ch-0sj"/>
                                     <outlet property="foregroundView" destination="GSp-Bl-shk" id="7Ds-ac-EPJ"/>
                                     <outlet property="foregroundViewTop" destination="Jmd-K0-oJa" id="GTe-dc-Kf3"/>
+                                    <outlet property="name" destination="Mvb-WY-JZ2" id="aXn-YM-r4n"/>
+                                    <outlet property="signupGeniusLink" destination="wav-iv-Z4o" id="uj2-bo-2hV"/>
+                                    <outlet property="slots" destination="XCw-ta-yfN" id="rEn-xF-Tk0"/>
+                                    <outlet property="time" destination="FTY-RN-RCt" id="Gb3-p2-iDM"/>
+                                    <outlet property="waiverLink" destination="JYk-H0-Wct" id="fd6-AE-blw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
