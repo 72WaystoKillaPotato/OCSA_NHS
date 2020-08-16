@@ -101,22 +101,64 @@ class ScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return CellHeight.cellCount
+        if !events.isEmpty{
+            return events.count
+        } else {
+            return 0
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! EventTableViewCell
         let durations: [TimeInterval] = [0.26, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
         //customize cells if [Events] is not empty
         if !events.isEmpty{
-            
+            let event = events[indexPath.row]
+            cell.date.text = unpackDate(date: event.date ?? "")
+            cell.time.text = event.time
+            cell.name.text = event.name
+            cell.address.text = event.address
+            cell.coordinator.text = event.coordinator
+            cell.slots.text = "\(event.slots ?? 0)"
+            cell.credit.text = "\(event.credit ?? 0)"
         }
         
         return cell
+    }
+    
+    fileprivate func unpackDate(date: String) -> String{
+        //date looks something like this: "2020-07-23T07:00:00.000Z"
+        if let endIndex = date.firstIndex(of: "T"), let startIndex = date.firstIndex(of: "-"){ //10, 4
+            let start = date.index(startIndex, offsetBy: 1)
+            let range = start ..< endIndex
+            let newDate = String(date[range]).replacingOccurrences(of: "-", with: "/")
+            return newDate
+        }
+        return ""
+    }
+    
+    fileprivate func rankEventsByDate(){
+        for event in self.events{
+            if let date = event.date, let time = event.time
+                , let dateIndex = date.firstIndex(of: "T"), let timeIndex = time.firstIndex(of: "-"){
+                let dateSubstring = date[...dateIndex]
+                let timeSubstring = time[..<timeIndex]
+                let combinedString = dateSubstring + timeSubstring
+                let cleanString = combinedString.replacingOccurrences(of: " ", with: "")
+                
+                //pack date (2020-07-23T18:30) into Date
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+                let finalDate = dateFormatter.date(from:cleanString)!
+                event.rankingDate = finalDate
+                print("rankingDate = ", finalDate)
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -132,6 +174,7 @@ class ScheduleTableViewController: UITableViewController {
 extension ScheduleTableViewController: EventUpdatesDelegate{
     func events(didFinishFetching: Bool, events: [Event]) {
         self.events = events
+        rankEventsByDate()
         tableView.reloadData()
     }
 }

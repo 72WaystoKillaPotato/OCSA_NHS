@@ -11,6 +11,8 @@ import UIKit
 class Event: NSObject{
     var name: String?
     var date: String?
+    var ap: String?
+    var rankingDate: Date?
     var time: String?
     var address: String?
     var coordinator: String?
@@ -28,6 +30,7 @@ class Event: NSObject{
         self.name = dictionary["name"] as? String
         self.date = dictionary["date"] as? String
         self.time = dictionary["time"] as? String
+        self.ap = dictionary["ap"] as? String
         self.address = dictionary["address"] as? String
         self.coordinator = dictionary["coordinator"] as? String
         self.coordinatorEmail = dictionary["coordinatorEmail"] as? String
