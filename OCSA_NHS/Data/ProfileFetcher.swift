@@ -37,7 +37,6 @@ class ProfileFetcher: NSObject {
     }
     
     fileprivate func unpackProfile(profile: [String: AnyObject]){
-        print("profile = \(profile)")
         var firstName: String?
         var credits: [String: String] = [:]
         var grade: String?

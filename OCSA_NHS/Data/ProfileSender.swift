@@ -20,7 +20,6 @@ class ProfileSender: NSObject{
         if self.profile["Preferred Name"] == nil{
             self.profile.removeValue(forKey: "Preferred Name")
         }
-        print("profile = ", self.profile)
         
         super.init()
     }
@@ -30,7 +29,7 @@ class ProfileSender: NSObject{
         photoUploadGroup.enter()
         uploadProfilePic(profile["Profile Picture"] as! UIImage)
         photoUploadGroup.notify(queue: .main) {
-            self.uploadProfileText()
+            self.uploadKey()
         }
     }
     
@@ -51,12 +50,14 @@ class ProfileSender: NSObject{
         })
     }
     
-    fileprivate func uploadProfileText(){
-        let date = self.profile["Birthday"] as! Date
-        self.profile["Birthday"] = NSNumber(value: Int(date.timeIntervalSince1970))
+    fileprivate func uploadKey(){
+//        let date = self.profile["Birthday"] as! Date
+//        self.profile["Birthday"] = NSNumber(value: Int(date.timeIntervalSince1970))
 //        if let unixDate = snapshot.value as? Double{
 //        let staticLoginDate = NSDate(timeIntervalSince1970: unixDate) as Date
         if let studentid = self.profile["ID"] as? String, let userid = Auth.auth().currentUser?.uid{
+            //take out ID, extra
+            profile.removeValue(forKey: "ID")
             Database.database().reference().child("users").child(studentid).setValue(self.profile)
             Database.database().reference().child("keys").child(userid).setValue(studentid)
             print("finished sending profile")

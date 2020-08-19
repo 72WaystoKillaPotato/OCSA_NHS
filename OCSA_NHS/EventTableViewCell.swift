@@ -21,10 +21,14 @@ class EventTableViewCell: FoldingCell {
     @IBOutlet weak var credit: UILabel!
     
     //container view elements
+    @IBOutlet weak var nameOrange: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
+    @IBOutlet weak var insideAddress: UILabel!
+    @IBOutlet weak var insideCoordinator: UILabel!
+    @IBOutlet weak var coordinatorEmail: UILabel!
     @IBOutlet weak var waiverLink: UIButton!
     @IBOutlet weak var signupGeniusLink: UIButton!
-    @IBOutlet weak var coordinatorEmail: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

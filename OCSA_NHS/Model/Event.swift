@@ -34,6 +34,7 @@ class Event: NSObject{
         self.address = dictionary["address"] as? String
         self.coordinator = dictionary["coordinator"] as? String
         self.coordinatorEmail = dictionary["coordinatorEmail"] as? String
+        self.eventDescription = dictionary["description"] as? String
         self.slots = dictionary["slots"] as? Int
         self.credit = dictionary["credit"] as? Int
         

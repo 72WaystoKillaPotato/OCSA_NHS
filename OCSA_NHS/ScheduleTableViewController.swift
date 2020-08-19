@@ -125,6 +125,12 @@ class ScheduleTableViewController: UITableViewController {
             cell.coordinator.text = event.coordinator
             cell.slots.text = "\(event.slots ?? 0)"
             cell.credit.text = "\(event.credit ?? 0)"
+            
+            cell.nameOrange.text = event.name
+            cell.eventDescription.text = event.eventDescription
+            cell.insideAddress.text = event.address
+            cell.insideCoordinator.text = "Coordinator: \(event.coordinator ?? "")"
+            cell.coordinatorEmail.text = "Email: \(event.coordinatorEmail ?? "")"
         }
         
         return cell
@@ -157,8 +163,13 @@ class ScheduleTableViewController: UITableViewController {
                 let finalDate = dateFormatter.date(from:cleanString)!
                 event.rankingDate = finalDate
                 print("rankingDate = ", finalDate)
+            } else{
+                event.rankingDate = Date()
             }
         }
+        
+        self.events = self.events.sorted(by:{ $0.rankingDate!.compare($1.rankingDate!) == .orderedAscending
+        })
     }
     
     // MARK: - Navigation

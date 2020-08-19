@@ -247,7 +247,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2333 ocsa lane, ocsa, ocsa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qau-JV-7DD">
-                                                            <rect key="frame" x="73" y="133" width="213" height="23"/>
+                                                            <rect key="frame" x="73" y="133" width="285" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <color key="textColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -275,14 +275,14 @@
                                                     <rect key="frame" x="0.0" y="166" width="358" height="165"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coordinator: Samm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb3-V8-f2o">
-                                                            <rect key="frame" x="78" y="8" width="147" height="30"/>
+                                                            <rect key="frame" x="78" y="8" width="272" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email: ziyao.su@ocsarts.net" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0a-fV-xGo">
-                                                            <rect key="frame" x="78" y="33" width="204" height="30"/>
+                                                            <rect key="frame" x="78" y="33" width="272" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -400,13 +400,16 @@
                                     <outlet property="containerView" destination="QId-7b-g3D" id="dQr-gU-CPQ"/>
                                     <outlet property="containerViewTop" destination="b1N-Vk-ZDQ" id="MS7-dy-Z6x"/>
                                     <outlet property="coordinator" destination="IRs-54-B7R" id="ZnJ-Fv-2gR"/>
-                                    <outlet property="coordinatorEmail" destination="R0a-fV-xGo" id="Sh5-Ja-rX3"/>
+                                    <outlet property="coordinatorEmail" destination="R0a-fV-xGo" id="aB7-dj-JWc"/>
                                     <outlet property="credit" destination="efx-aR-umC" id="vmH-Zu-a7g"/>
                                     <outlet property="date" destination="yaY-Na-G0X" id="MBs-3a-CNx"/>
                                     <outlet property="eventDescription" destination="hGg-Yk-QDN" id="Lzx-Ch-0sj"/>
                                     <outlet property="foregroundView" destination="GSp-Bl-shk" id="7Ds-ac-EPJ"/>
                                     <outlet property="foregroundViewTop" destination="Jmd-K0-oJa" id="GTe-dc-Kf3"/>
+                                    <outlet property="insideAddress" destination="Qau-JV-7DD" id="tzw-WW-0Uc"/>
+                                    <outlet property="insideCoordinator" destination="xb3-V8-f2o" id="J26-fm-oLj"/>
                                     <outlet property="name" destination="Mvb-WY-JZ2" id="aXn-YM-r4n"/>
+                                    <outlet property="nameOrange" destination="Deu-s1-ofD" id="uaA-qe-Rjh"/>
                                     <outlet property="signupGeniusLink" destination="wav-iv-Z4o" id="uj2-bo-2hV"/>
                                     <outlet property="slots" destination="XCw-ta-yfN" id="rEn-xF-Tk0"/>
                                     <outlet property="time" destination="FTY-RN-RCt" id="Gb3-p2-iDM"/>

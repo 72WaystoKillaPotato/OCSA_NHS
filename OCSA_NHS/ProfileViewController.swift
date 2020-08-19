@@ -72,25 +72,6 @@ class ProfileViewController: FormViewController{
                 })
                 $0.title = "Preferred Name"
             }
-            <<< PhoneRow("Phone Number"){
-                $0.title = "Phone Number"
-                $0.add(rule: RuleRequired())
-                $0.add(rule: RuleMinLength(minLength: 11))
-                $0.add(rule: RuleMaxLength(maxLength: 11))
-                $0.placeholder = "10001234567"
-            }.cellUpdate { cell, row in
-                if !row.isValid {
-                    cell.titleLabel?.textColor = .red
-                }
-            }
-            <<< DateRow("Birthday"){
-                $0.title = "Birthday"
-                $0.add(rule: RuleRequired())
-            }.cellUpdate { cell, row in
-                if !row.isValid {
-                    cell.textLabel?.textColor = .systemRed
-                }
-            }
         +++ Section("School Info")
             <<< SegmentedRow<String>("Grade") {
                 $0.options = ["9", "10", "11", "12"]

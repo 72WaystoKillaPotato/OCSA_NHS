@@ -109,11 +109,7 @@ class MemberProfileViewController: UIViewController{
 
 extension MemberProfileViewController: ProfileUpdatesDelegate{
     func profile(didFinishFetching: Bool, firstN: String, lastN: String, credits: [String : String], grade: String) {
-        print("first name = \(firstN), lastName = \(lastN), credits = \(credits), grade = \(grade)")
-        
         var creditsMutable = credits
-        
-        print("creditsMutable = \(creditsMutable)")
         
         var isDuplicate: Bool = false
         
@@ -138,8 +134,8 @@ extension MemberProfileViewController: ProfileUpdatesDelegate{
             isDuplicate = false
         }
         
-        print(self.credits.map({$0.instances}))
-        print(self.credits.map({$0.name}))
+//        print(self.credits.map({$0.instances}))
+//        print(self.credits.map({$0.name}))
         
         creditPieChart.layers = [createTextLayer()]
         
