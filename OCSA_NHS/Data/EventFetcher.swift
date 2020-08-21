@@ -21,6 +21,7 @@ class EventFetcher: NSObject {
     
     func fetchUserInfo(){
         guard let ownerID = Auth.auth().currentUser?.uid else { return }
+        eventsArray = []
         //get student ID from key
         Database.database().reference().child("keys").child(ownerID).observeSingleEvent(of: .value) { (snapshot) in
             guard snapshot.exists() else {return}

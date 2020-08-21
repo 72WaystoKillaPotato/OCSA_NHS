@@ -16,13 +16,15 @@ class ScheduleTableViewController: UITableViewController {
         static let cellCount: Int = 5
     }
     
-    var cellHeights = Array(repeating: CellHeight.close, count: CellHeight.cellCount)
+    var cellHeights: [CGFloat] = []
     let eventFetcher = EventFetcher()
     
     var events: [Event] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cellHeights = Array(repeating: CellHeight.close, count: events.count)
         
         eventFetcher.delegate = self
         eventFetcher.fetchUserInfo()
@@ -38,6 +40,14 @@ class ScheduleTableViewController: UITableViewController {
         let tempImageView = UIImageView(image: UIImage(named: "background"))
         tempImageView.frame = self.tableView.frame
         self.tableView.backgroundView = tempImageView
+        
+        //refresh control
+        if #available(iOS 10.0, *) {//33, 40, 86
+            tableView.refreshControl = UIRefreshControl()
+            tableView.refreshControl?.tintColor = UIColor(displayP3Red: 33.0/255.0, green: 40.0/255.0, blue: 86.0/255.0, alpha: 1)
+            tableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -46,6 +56,7 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     @objc func refreshHandler() {
+        eventFetcher.fetchUserInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -184,7 +195,11 @@ class ScheduleTableViewController: UITableViewController {
 
 extension ScheduleTableViewController: EventUpdatesDelegate{
     func events(didFinishFetching: Bool, events: [Event]) {
+        if self.tableView.refreshControl?.isRefreshing ?? false {
+            self.tableView.refreshControl?.endRefreshing()
+        }
         self.events = events
+        cellHeights = Array(repeating: CellHeight.close, count: events.count)
         rankEventsByDate()
         tableView.reloadData()
     }
