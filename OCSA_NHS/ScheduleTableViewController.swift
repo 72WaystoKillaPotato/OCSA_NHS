@@ -142,6 +142,19 @@ class ScheduleTableViewController: UITableViewController {
             cell.insideAddress.text = event.address
             cell.insideCoordinator.text = "Coordinator: \(event.coordinator ?? "")"
             cell.coordinatorEmail.text = "Email: \(event.coordinatorEmail ?? "")"
+            cell.waiverURL = event.waiverLink
+            cell.signupGeniusURL = event.signupGeniusLink
+            
+            //disable the cell if the date for the event has passed
+            if let date = event.rankingDate{
+                if date < Date(){
+                    print("event ", event.name ?? "defaultName", "is disabled. ")
+                    cell.isUserInteractionEnabled = false
+                    cell.name.text = "Event Expired"
+                } else{
+                    cell.isUserInteractionEnabled = true
+                }
+            }
         }
         
         return cell

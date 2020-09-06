@@ -38,7 +38,7 @@ class Event: NSObject{
         self.slots = dictionary["slots"] as? Int
         self.credit = dictionary["credit"] as? Int
         
-        self.waiverLink = dictionary["waiverLink"] as? URL
-        self.signupGeniusLink = dictionary["signupGeniusLink"] as? URL
+        self.waiverLink = URL(string: dictionary["waiverLink"] as? String ?? "")
+        self.signupGeniusLink = URL(string: dictionary["signupGeniusLink"] as? String ?? "")
     }
 }

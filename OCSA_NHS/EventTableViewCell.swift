@@ -11,6 +11,10 @@ import UIKit
 
 class EventTableViewCell: FoldingCell {
     
+    //links
+    var waiverURL:URL?
+    var signupGeniusURL:URL?
+    
     //foreground view elements
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
@@ -51,5 +55,16 @@ class EventTableViewCell: FoldingCell {
         let durations = [0.33, 0.26, 0.26] // timing animation for each view
         return durations[itemIndex]
     }
-
+    
+    @IBAction func openWaiver(_ sender: Any) {
+        if let url = waiverURL{
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func openSignUpGenius(_ sender: Any) {
+        if let url = signupGeniusURL{
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }

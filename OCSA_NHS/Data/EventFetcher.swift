@@ -27,7 +27,7 @@ class EventFetcher: NSObject {
             guard snapshot.exists() else {return}
             guard let studentID = snapshot.value as? String else {return}
             //get profile from student ID
-            Database.database().reference().child("users").child(studentID).child("Credits").observeSingleEvent(of: .value) { (snapshot) in
+            Database.database().reference().child("users").child(studentID).child("Events").observeSingleEvent(of: .value) { (snapshot) in
                 guard snapshot.exists() else {
                     return
                 }
