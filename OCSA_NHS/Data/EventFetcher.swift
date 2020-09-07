@@ -22,25 +22,37 @@ class EventFetcher: NSObject {
     func fetchUserInfo(){
         guard let ownerID = Auth.auth().currentUser?.uid else { return }
         eventsArray = []
+        var credits: [Int] = []
         //get student ID from key
         Database.database().reference().child("keys").child(ownerID).observeSingleEvent(of: .value) { (snapshot) in
             guard snapshot.exists() else {return}
             guard let studentID = snapshot.value as? String else {return}
             //get profile from student ID
-            Database.database().reference().child("users").child(studentID).child("Events").observeSingleEvent(of: .value) { (snapshot) in
+            Database.database().reference().child("users").child(studentID).observeSingleEvent(of: .value) { (snapshot) in
                 guard snapshot.exists() else {
                     return
                 }
 //                print("snapshot = ", snapshot)
-                if let events = snapshot.value as? [String: Int]{
+                if let creditsDict = snapshot.childSnapshot(forPath: "Credits").value as? [String: Int]{
+                    credits = Array(creditsDict.values)
+                }
+                if let eventsDict = snapshot.childSnapshot(forPath: "Events").value as? [String: Int]{
+                    var events = Array(eventsDict.values)
+                    for (index, event) in events.enumerated(){
+                        credits.forEach{credit in
+                            if event == credit{
+                                events.remove(at: index)
+                            }
+                        }
+                    }
                     self.fetchEvents(eventCodes: events)
                 }
             }
         }
     }
     
-    fileprivate func fetchEvents(eventCodes: [String: Int]){
-        for (_, value) in eventCodes{
+    fileprivate func fetchEvents(eventCodes: [Int]){
+        for value in eventCodes{
             let valueString = String(value)
             self.downloadGroup.enter()
             Database.database().reference().child("events").child(valueString).observeSingleEvent(of: .value) { (snapshot) in

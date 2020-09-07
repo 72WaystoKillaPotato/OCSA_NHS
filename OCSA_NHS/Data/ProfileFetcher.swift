@@ -41,7 +41,20 @@ class ProfileFetcher: NSObject {
         var credits: [String: String] = [:]
         var grade: String?
         
-        guard let creditsUnmapped: [String: Int] = profile["Credits"] as? [String: Int], let gradeInt:String = profile["Grade"] as? String, let lastName = profile["Last Name"] as? String, profile["First Name"] != nil || profile["Preferred Name"] != nil else {
+        guard let creditsFiltering: [String: AnyObject] = profile["Credits"] as? [String: AnyObject] else{
+            print("unpacking credits and found nil/wrong data types.")
+            return
+        }
+        
+//        filter credits so it doesn't contain ""
+        var creditsFiltered: [String: Int] = [:]
+        for (key, value) in creditsFiltering{
+            if let newEntry = value as? Int{
+                creditsFiltered[key] = newEntry
+            }
+        }
+        
+        guard let gradeInt:String = profile["Grade"] as? String, let lastName = profile["Last Name"] as? String, profile["First Name"] != nil || profile["Preferred Name"] != nil else {
             print("unpacking profile and found nil/wrong data types.")
             return
         }
@@ -60,7 +73,7 @@ class ProfileFetcher: NSObject {
         }
 
         //credits
-        let creditCodes = creditsUnmapped.compactMapValues {Int($0)}
+        let creditCodes = creditsFiltered.compactMapValues {$0}
 //        print("creditCodes = \(creditCodes)")
         for (key, eventKey) in creditCodes{
             downloadGroup.enter()
