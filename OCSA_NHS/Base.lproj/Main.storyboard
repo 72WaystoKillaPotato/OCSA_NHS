@@ -396,11 +396,6 @@
                                         <constraint firstItem="QId-7b-g3D" firstAttribute="leading" secondItem="ZIw-Jz-Z7v" secondAttribute="leadingMargin" constant="8" id="zfE-IB-Qhz"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="address" destination="NPL-tG-KSP" id="PUK-gR-M3L"/>
                                     <outlet property="containerView" destination="QId-7b-g3D" id="dQr-gU-CPQ"/>
@@ -463,7 +458,7 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="P3D-rK-9In" kind="relationship" relationship="viewControllers" id="pmh-dn-aHP"/>
+                        <segue destination="Bw8-OX-p1g" kind="relationship" relationship="viewControllers" id="rTy-gC-scO"/>
                         <segue destination="oAP-Hm-Ibo" kind="relationship" relationship="viewControllers" id="h0o-Oi-EDM"/>
                         <segue destination="32m-Xi-AnU" kind="relationship" relationship="viewControllers" id="oNn-5g-IvA"/>
                     </connections>
@@ -491,20 +486,34 @@
             <point key="canvasLocation" x="1483" y="106"/>
         </scene>
         <!--Attendance-->
-        <scene sceneID="Szc-xC-ssH">
+        <scene sceneID="YeC-wn-BjB">
             <objects>
-                <viewController id="P3D-rK-9In" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xJY-sN-elG">
+                <tableViewController id="Bw8-OX-p1g" customClass="AttendanceTableViewController" customModule="OCSA_NHS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yq0-v1-xBP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="zGT-2X-97N"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Attendance" image="hand.raised" catalog="system" id="4Vb-zf-NC5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MVG-be-4bM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttendanceCell" rowHeight="150" id="tXb-i0-NV7" customClass="AttendanceTableViewCell" customModule="OCSA_NHS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tXb-i0-NV7" id="jr9-OH-52T">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.12815850970000001" green="0.15579459070000001" blue="0.3372725546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bw8-OX-p1g" id="vu4-N6-blH"/>
+                            <outlet property="delegate" destination="Bw8-OX-p1g" id="t0W-nI-z2y"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Attendance" image="hand.raised" catalog="system" id="Wip-UN-vTB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5VC-sr-dq3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3838" y="-629"/>
+            <point key="canvasLocation" x="3837.68115942029" y="-625.44642857142856"/>
         </scene>
         <!--My Events-->
         <scene sceneID="NxN-tR-Nfj">

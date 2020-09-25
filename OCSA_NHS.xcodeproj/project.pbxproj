@@ -10,6 +10,8 @@
 		851E311724C3A6380082D347 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 851E311624C3A6380082D347 /* GoogleService-Info.plist */; };
 		851E311924C3F3350082D347 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E311824C3F3350082D347 /* LoginViewController.swift */; };
 		851E311B24C3F7A90082D347 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E311A24C3F7A90082D347 /* ProfileViewController.swift */; };
+		852CED4B251DAD8800F381DD /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CED4A251DAD8800F381DD /* AttendanceTableViewCell.swift */; };
+		852CED4D251DADD400F381DD /* AttendanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CED4C251DADD400F381DD /* AttendanceTableViewController.swift */; };
 		85466AD524D15A7B00F64AC0 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466AD424D15A7B00F64AC0 /* ScheduleTableViewController.swift */; };
 		85466AD724D15E8800F64AC0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */; };
 		85466AD924D20CB800F64AC0 /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */; };
@@ -34,6 +36,8 @@
 		851E311624C3A6380082D347 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		851E311824C3F3350082D347 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		851E311A24C3F7A90082D347 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		852CED4A251DAD8800F381DD /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
+		852CED4C251DADD400F381DD /* AttendanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewController.swift; sourceTree = "<group>"; };
 		85466AD424D15A7B00F64AC0 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				851E311824C3F3350082D347 /* LoginViewController.swift */,
 				851E311A24C3F7A90082D347 /* ProfileViewController.swift */,
 				854952E724C6B5C000870512 /* HomeViewController.swift */,
+				852CED4C251DADD400F381DD /* AttendanceTableViewController.swift */,
+				852CED4A251DAD8800F381DD /* AttendanceTableViewCell.swift */,
 				85466AD424D15A7B00F64AC0 /* ScheduleTableViewController.swift */,
 				85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */,
 				85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */,
@@ -287,9 +293,11 @@
 				85466ADD24D2555B00F64AC0 /* Event.swift in Sources */,
 				8578857B24DA6EB40025A5E0 /* ProfileFetcher.swift in Sources */,
 				85612E0624C383250083B7D0 /* AppDelegate.swift in Sources */,
+				852CED4B251DAD8800F381DD /* AttendanceTableViewCell.swift in Sources */,
 				85612E0824C383250083B7D0 /* SceneDelegate.swift in Sources */,
 				85466ADF24D28B6000F64AC0 /* CompleteEventViewController.swift in Sources */,
 				85466AD524D15A7B00F64AC0 /* ScheduleTableViewController.swift in Sources */,
+				852CED4D251DADD400F381DD /* AttendanceTableViewController.swift in Sources */,
 				8554AD5824E3A33D009EB04C /* Credit.swift in Sources */,
 				854952EC24C6C2FF00870512 /* ProfileSender.swift in Sources */,
 				854952E824C6B5C000870512 /* HomeViewController.swift in Sources */,
