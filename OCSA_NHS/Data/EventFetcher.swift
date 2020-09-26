@@ -32,6 +32,10 @@ class EventFetcher: NSObject {
                 guard snapshot.exists() else {
                     return
                 }
+                if let studentProfile = snapshot.value as? [String: AnyObject]{
+                    cache.setObject(studentProfile as NSDictionary, forKey: "profile")
+                    print("profile cached")
+                }
 //                print("snapshot = ", snapshot)
                 if let creditsDict = snapshot.childSnapshot(forPath: "Credits").value as? [String: Int]{
                     credits = Array(creditsDict.values)

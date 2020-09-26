@@ -9,9 +9,19 @@
 import UIKit
 
 class AttendanceTableViewController: UITableViewController {
-
+    
+    var attendanceEntries: [String: AnyObject] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let cachedVersion = cache.object(forKey: "profile") as? [String: AnyObject]{
+            // use the cached version
+            print("cached version used")
+            if let attendance = cachedVersion["Attendance"] as? [String : AnyObject]{
+                self.attendanceEntries = attendance
+            }
+        }
         
         tableView.separatorStyle = .none
 
@@ -26,12 +36,12 @@ class AttendanceTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return attendanceEntries.count
     }
     
     //spacing between sections
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 10
     }
     
     // Make the background color show through
@@ -58,10 +68,10 @@ class AttendanceTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("section = ", indexPath.section)
-        print("row = ", indexPath.row)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("section = ", indexPath.section)
+//        print("row = ", indexPath.row)
+//    }
     
 
     /*

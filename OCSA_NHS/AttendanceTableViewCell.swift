@@ -9,10 +9,13 @@
 import UIKit
 
 class AttendanceTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        containerView.layer.cornerRadius = 20
+        containerView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

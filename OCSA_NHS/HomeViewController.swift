@@ -8,6 +8,10 @@
 
 import UIKit
 
+let cache = NSCache<NSString, NSDictionary>()
 class HomeViewController: UITabBarController{
     
+    override func viewDidLoad() {
+        selectedIndex = 1
+    }
 }

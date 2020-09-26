@@ -46,7 +46,7 @@ class MemberProfileViewController: UIViewController{
     
     override func viewDidLoad() {
         profileFetcher.delegate = self
-        profileFetcher.fetchProfile()
+        profileFetcher.cacheOrFetch()
         
         creditPieChart.delegate = self
         nameLabel.alpha = 0

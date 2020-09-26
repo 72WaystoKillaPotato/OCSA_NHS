@@ -18,6 +18,16 @@ class ProfileFetcher: NSObject {
     weak var delegate: ProfileUpdatesDelegate?
     fileprivate let downloadGroup = DispatchGroup()
     
+    func cacheOrFetch(){
+        if let cachedVersion = cache.object(forKey: "profile") as? [String: AnyObject]{
+            // use the cached version
+            print("cached version used")
+            self.unpackProfile(profile: cachedVersion)
+        } else{
+            fetchProfile()
+        }
+    }
+    
     func fetchProfile(){
         guard let ownerID = Auth.auth().currentUser?.uid else { return }
         //get student ID from key
