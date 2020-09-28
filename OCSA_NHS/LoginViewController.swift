@@ -26,7 +26,7 @@ class LoginViewController: UIViewController{
         GIDSignIn.sharedInstance().delegate = self
         
         //setup button
-        googleSignInButton.layer.cornerRadius = 20
+//        googleSignInButton.layer.cornerRadius = 20
     }
     
     //listener for each of your app's views that need information about the signed-in user
