@@ -61,7 +61,6 @@ class ProfileFetcher: NSObject {
 //        filter credits so it doesn't contain ""
         var creditsFiltered: [String: Int] = [:]
         for (key, value) in useThisCredits{
-            print("key = ", key)
             if let newEntry = value as? Int {
                 if key.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) != "credit: 0"{
                     creditsFiltered[key] = newEntry
