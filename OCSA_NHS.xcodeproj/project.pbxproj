@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		851E311724C3A6380082D347 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 851E311624C3A6380082D347 /* GoogleService-Info.plist */; };
 		851E311924C3F3350082D347 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E311824C3F3350082D347 /* LoginViewController.swift */; };
 		851E311B24C3F7A90082D347 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E311A24C3F7A90082D347 /* ProfileViewController.swift */; };
 		852CED4B251DAD8800F381DD /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CED4A251DAD8800F381DD /* AttendanceTableViewCell.swift */; };
@@ -26,13 +25,13 @@
 		85612E1224C383290083B7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85612E1024C383290083B7D0 /* LaunchScreen.storyboard */; };
 		8578857B24DA6EB40025A5E0 /* ProfileFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */; };
 		85B8FA3024E789D00064A7B8 /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B8FA2F24E789D00064A7B8 /* EventFetcher.swift */; };
+		85BB72CA2521C2DE008000EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85BB72C92521C2DE008000EE /* GoogleService-Info.plist */; };
 		B3A09B68008EE4AB4BBFABE2 /* Pods_OCSA_NHS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E568624C52462D9128FA0B64 /* Pods_OCSA_NHS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2AB6B7D663BDCA2A9F4095D7 /* Pods-OCSA_NHS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSA_NHS.release.xcconfig"; path = "Target Support Files/Pods-OCSA_NHS/Pods-OCSA_NHS.release.xcconfig"; sourceTree = "<group>"; };
 		66A7E0F1A2B7143375976CB1 /* Pods-OCSA_NHS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSA_NHS.debug.xcconfig"; path = "Target Support Files/Pods-OCSA_NHS/Pods-OCSA_NHS.debug.xcconfig"; sourceTree = "<group>"; };
-		851E311624C3A6380082D347 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		851E311824C3F3350082D347 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		851E311A24C3F7A90082D347 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		852CED4A251DAD8800F381DD /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		85612E1324C383290083B7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8578857A24DA6EB40025A5E0 /* ProfileFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFetcher.swift; sourceTree = "<group>"; };
 		85B8FA2F24E789D00064A7B8 /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
+		85BB72C92521C2DE008000EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E568624C52462D9128FA0B64 /* Pods_OCSA_NHS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCSA_NHS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,7 +124,7 @@
 				85612E1024C383290083B7D0 /* LaunchScreen.storyboard */,
 				85612E0E24C383290083B7D0 /* Assets.xcassets */,
 				85612E1324C383290083B7D0 /* Info.plist */,
-				851E311624C3A6380082D347 /* GoogleService-Info.plist */,
+				85BB72C92521C2DE008000EE /* GoogleService-Info.plist */,
 			);
 			path = OCSA_NHS;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85612E1224C383290083B7D0 /* LaunchScreen.storyboard in Resources */,
-				851E311724C3A6380082D347 /* GoogleService-Info.plist in Resources */,
+				85BB72CA2521C2DE008000EE /* GoogleService-Info.plist in Resources */,
 				85612E0F24C383290083B7D0 /* Assets.xcassets in Resources */,
 				85612E0D24C383250083B7D0 /* Main.storyboard in Resources */,
 			);
@@ -443,13 +443,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OCSA_NHS/OCSA_NHS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7MVABYFZQW;
+				DEVELOPMENT_TEAM = 33ZJRJV6JP;
 				INFOPLIST_FILE = OCSA_NHS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.samsu.OCSA-NHS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cubi.OCSA-NHS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -463,13 +463,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OCSA_NHS/OCSA_NHS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7MVABYFZQW;
+				DEVELOPMENT_TEAM = 33ZJRJV6JP;
 				INFOPLIST_FILE = OCSA_NHS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.samsu.OCSA-NHS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cubi.OCSA-NHS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

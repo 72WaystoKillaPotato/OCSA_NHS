@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>890101936523-doebk0elcadekmtm7kgll1u15smtfott.apps.googleusercontent.com</string>
+	<string>890101936523-3tf007u12n75s56ub97uuugr71d2ldgq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.890101936523-doebk0elcadekmtm7kgll1u15smtfott</string>
+	<string>com.googleusercontent.apps.890101936523-3tf007u12n75s56ub97uuugr71d2ldgq</string>
 	<key>API_KEY</key>
 	<string>AIzaSyB7JdYz4f8RHzsTZt6SfvN06L4RceXzbpI</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.samsu.OCSA-NHS</string>
+	<string>com.cubi.OCSA-NHS</string>
 	<key>PROJECT_ID</key>
 	<string>ocsa-nhs-6535d</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:890101936523:ios:1115ceba9776ee0912bf8e</string>
+	<string>1:890101936523:ios:99a1d25a1078426812bf8e</string>
 	<key>DATABASE_URL</key>
 	<string>https://ocsa-nhs-6535d.firebaseio.com</string>
 </dict>

@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>.light</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>OCSA NHS needs access to your Photo Library for profile image selection, meeting attendance, and event attendance</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -27,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.890101936523-doebk0elcadekmtm7kgll1u15smtfott</string>
+				<string>com.googleusercontent.apps.890101936523-3tf007u12n75s56ub97uuugr71d2ldgq</string>
 			</array>
 		</dict>
 	</array>
@@ -35,6 +31,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>OCSA NHS needs access to your Photo Library for profile image selection, meeting attendance, and event attendance</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -75,5 +73,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>.light</string>
 </dict>
 </plist>
