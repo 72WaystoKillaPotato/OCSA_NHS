@@ -10,7 +10,7 @@ import UIKit
 
 class AttendanceTableViewController: UITableViewController {
     
-    var attendanceEntries: [String: AnyObject] = [:]
+    var attendanceEntries:[Dictionary<String, AnyObject>.Element] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +19,18 @@ class AttendanceTableViewController: UITableViewController {
             // use the cached version
             print("cached version used")
             if let attendance = cachedVersion["Attendance"] as? [String : AnyObject]{
-                self.attendanceEntries = attendance
+                var newAttendance: [String : AnyObject] = [:]
+                for (key, value) in attendance{
+                    if key.contains("-"){
+                        newAttendance[key] = value
+                    }
+                }
+                let sortedAttendance = newAttendance.sorted(by: { $0.0 < $1.0 })
+                self.attendanceEntries = sortedAttendance
+                print(self.attendanceEntries)
             }
         }
-        
+        tableView.reloadData()
         tableView.separatorStyle = .none
 
         // Uncomment the following line to preserve selection between presentations
@@ -62,6 +70,22 @@ class AttendanceTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttendanceCell", for: indexPath) as! AttendanceTableViewCell
+        if !attendanceEntries.isEmpty{
+            let attendanceEntry = attendanceEntries[indexPath.section]
+            cell.attendanceDate.text = attendanceEntry.key
+            if let state = attendanceEntry.value as? String{
+                let trimmedState = state.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+                if trimmedState == "x"{
+                    cell.attendanceState.text = "Attended"
+                }
+                if trimmedState == "e"{
+                    cell.attendanceState.text = "Excused"
+                }
+                if trimmedState == "u"{
+                    cell.attendanceState.text = "Unexcused"
+                }
+            }
+        }
 
         // Configure the cell...
 

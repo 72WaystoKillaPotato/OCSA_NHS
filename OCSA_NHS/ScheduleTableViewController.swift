@@ -12,7 +12,7 @@ import UIKit
 class ScheduleTableViewController: UITableViewController {
     struct CellHeight {
         static let close: CGFloat = 185 // equal or greater foregroundView height
-        static let open: CGFloat = 461 // equal or greater containerView height
+        static let open: CGFloat = 440 // equal or greater containerView height
         static let cellCount: Int = 5
     }
     
@@ -144,6 +144,7 @@ class ScheduleTableViewController: UITableViewController {
             cell.coordinatorEmail.text = "Email: \(event.coordinatorEmail ?? "")"
             cell.waiverURL = event.waiverLink
             cell.signupGeniusURL = event.signupGeniusLink
+            cell.completeEventURL = event.completeEventLink
             
             //disable the cell if the date for the event has passed
             if let date = event.rankingDate{

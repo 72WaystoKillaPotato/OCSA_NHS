@@ -74,7 +74,7 @@ class ProfileViewController: FormViewController{
             }
         +++ Section("School Info")
             <<< SegmentedRow<String>("Grade") {
-                $0.options = ["9", "10", "11", "12"]
+                $0.options = ["10", "11", "12"]
                 $0.title = "Grade"
                 $0.add(rule: RuleRequired())
             }.cellUpdate { cell, row in

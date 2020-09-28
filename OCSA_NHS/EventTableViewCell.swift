@@ -14,6 +14,7 @@ class EventTableViewCell: FoldingCell {
     //links
     var waiverURL:URL?
     var signupGeniusURL:URL?
+    var completeEventURL: URL?
     
     //foreground view elements
     @IBOutlet weak var date: UILabel!
@@ -32,6 +33,7 @@ class EventTableViewCell: FoldingCell {
     @IBOutlet weak var coordinatorEmail: UILabel!
     @IBOutlet weak var waiverLink: UIButton!
     @IBOutlet weak var signupGeniusLink: UIButton!
+    @IBOutlet weak var completeEventLink: UIButton!
     
     
     override func awakeFromNib() {
@@ -64,6 +66,11 @@ class EventTableViewCell: FoldingCell {
     
     @IBAction func openSignUpGenius(_ sender: Any) {
         if let url = signupGeniusURL{
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    @IBAction func openCompleteForm(_ sender: Any) {
+        if let url = completeEventURL{
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

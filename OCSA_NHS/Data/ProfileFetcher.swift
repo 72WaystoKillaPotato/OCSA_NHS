@@ -11,6 +11,7 @@ import Firebase
 
 protocol ProfileUpdatesDelegate: class {
     func profile(didFinishFetching: Bool, firstN: String, lastN: String, credits: [String: String], grade: String)
+    func noCreditProfile(didFinishFetching: Bool, firstN: String, lastN: String, grade: String)
 }
 
 class ProfileFetcher: NSObject {
@@ -51,16 +52,20 @@ class ProfileFetcher: NSObject {
         var credits: [String: String] = [:]
         var grade: String?
         
-        guard let creditsFiltering: [String: AnyObject] = profile["Credits"] as? [String: AnyObject] else{
-            print("unpacking credits and found nil/wrong data types.")
-            return
+        var useThisCredits: [String: AnyObject] = [:]
+        
+        if let creditsFiltering: [String: AnyObject] = profile["Credits"] as? [String: AnyObject]{
+            useThisCredits = creditsFiltering
         }
         
 //        filter credits so it doesn't contain ""
         var creditsFiltered: [String: Int] = [:]
-        for (key, value) in creditsFiltering{
-            if let newEntry = value as? Int{
-                creditsFiltered[key] = newEntry
+        for (key, value) in useThisCredits{
+            print("key = ", key)
+            if let newEntry = value as? Int {
+                if key.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) != "credit: 0"{
+                    creditsFiltered[key] = newEntry
+                }
             }
         }
         
@@ -75,6 +80,18 @@ class ProfileFetcher: NSObject {
 //        let ageComponents = Calendar.current.dateComponents([.year], from: birthDate, to: Date())
 //        age = ageComponents.year!
         
+        //grade
+        switch gradeInt {
+            case "10":
+                grade = "Sophomore"
+            case "11":
+                grade = "Junior"
+            case "12":
+                grade = "Senior"
+            default:
+                grade = "Grade Not Found"
+        }
+        
         //preferred name or first name
         if let name = profile["Preferred Name"] as? String{
             firstName = name
@@ -84,34 +101,24 @@ class ProfileFetcher: NSObject {
 
         //credits
         let creditCodes = creditsFiltered.compactMapValues {$0}
-//        print("creditCodes = \(creditCodes)")
-        for (key, eventKey) in creditCodes{
-            downloadGroup.enter()
-            let keyString = String(eventKey)
-            Database.database().reference().child("events").child(keyString).child("name").observeSingleEvent(of: .value) { (snapshot) in
-                guard snapshot.exists() else {
-                    return
+        if creditCodes.isEmpty{
+            print("is it empty?")
+            self.delegate?.noCreditProfile(didFinishFetching: true, firstN: firstName!, lastN: lastName, grade: grade!)
+        } else {
+            for (key, eventKey) in creditCodes{
+                downloadGroup.enter()
+                let keyString = String(eventKey)
+                Database.database().reference().child("events").child(keyString).child("name").observeSingleEvent(of: .value) { (snapshot) in
+                    guard snapshot.exists() else {
+                        return
+                    }
+                    credits[key] = snapshot.value as? String
+                    self.downloadGroup.leave()
                 }
-                credits[key] = snapshot.value as? String
-                self.downloadGroup.leave()
             }
-        }
-        self.downloadGroup.notify(queue: .main) {
-            self.delegate?.profile(didFinishFetching: true, firstN: firstName!, lastN: lastName, credits: credits, grade: grade!)
-        }
-        
-        //grade
-        switch gradeInt {
-            case "9":
-                grade = "Freshman"
-            case "10":
-                grade = "Sophomore"
-            case "11":
-                grade = "Junior"
-            case "12":
-                grade = "Senior"
-            default:
-                grade = "Grade Not Found"
+            self.downloadGroup.notify(queue: .main) {
+                self.delegate?.profile(didFinishFetching: true, firstN: firstName!, lastN: lastName, credits: credits, grade: grade!)
+            }
         }
     }
 }

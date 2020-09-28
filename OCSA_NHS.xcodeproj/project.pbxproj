@@ -16,7 +16,6 @@
 		85466AD724D15E8800F64AC0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */; };
 		85466AD924D20CB800F64AC0 /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */; };
 		85466ADD24D2555B00F64AC0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466ADC24D2555B00F64AC0 /* Event.swift */; };
-		85466ADF24D28B6000F64AC0 /* CompleteEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */; };
 		854952E824C6B5C000870512 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854952E724C6B5C000870512 /* HomeViewController.swift */; };
 		854952EC24C6C2FF00870512 /* ProfileSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854952EB24C6C2FF00870512 /* ProfileSender.swift */; };
 		8554AD5824E3A33D009EB04C /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554AD5724E3A33D009EB04C /* Credit.swift */; };
@@ -42,7 +41,6 @@
 		85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
 		85466ADC24D2555B00F64AC0 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteEventViewController.swift; sourceTree = "<group>"; };
 		854952E724C6B5C000870512 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		854952EB24C6C2FF00870512 /* ProfileSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSender.swift; sourceTree = "<group>"; };
 		854952ED24C74AD500870512 /* OCSA_NHS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCSA_NHS.entitlements; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				852CED4A251DAD8800F381DD /* AttendanceTableViewCell.swift */,
 				85466AD424D15A7B00F64AC0 /* ScheduleTableViewController.swift */,
 				85466AD624D15E8800F64AC0 /* EventTableViewCell.swift */,
-				85466ADE24D28B6000F64AC0 /* CompleteEventViewController.swift */,
 				85466AD824D20CB800F64AC0 /* MemberProfileViewController.swift */,
 				85B8FA2E24E7895F0064A7B8 /* Data */,
 				8554AD5924E3A345009EB04C /* Model */,
@@ -295,7 +292,6 @@
 				85612E0624C383250083B7D0 /* AppDelegate.swift in Sources */,
 				852CED4B251DAD8800F381DD /* AttendanceTableViewCell.swift in Sources */,
 				85612E0824C383250083B7D0 /* SceneDelegate.swift in Sources */,
-				85466ADF24D28B6000F64AC0 /* CompleteEventViewController.swift in Sources */,
 				85466AD524D15A7B00F64AC0 /* ScheduleTableViewController.swift in Sources */,
 				852CED4D251DADD400F381DD /* AttendanceTableViewController.swift in Sources */,
 				8554AD5824E3A33D009EB04C /* Credit.swift in Sources */,

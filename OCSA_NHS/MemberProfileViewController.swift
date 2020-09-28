@@ -49,9 +49,9 @@ class MemberProfileViewController: UIViewController{
         profileFetcher.cacheOrFetch()
         
         creditPieChart.delegate = self
-        nameLabel.alpha = 0
-        gradeLabel.alpha = 0
-        noCreditsLabel.alpha = 0
+//        nameLabel.alpha = 0
+//        gradeLabel.alpha = 0
+//        noCreditsLabel.alpha = 0
     }
     
     // MARK: - Model
@@ -108,6 +108,12 @@ class MemberProfileViewController: UIViewController{
 }
 
 extension MemberProfileViewController: ProfileUpdatesDelegate{
+    func noCreditProfile(didFinishFetching: Bool, firstN: String, lastN: String, grade: String) {
+        print("hey wtf")
+        nameLabel.text = firstN + " " + lastN
+        gradeLabel.text = grade
+    }
+    
     func profile(didFinishFetching: Bool, firstN: String, lastN: String, credits: [String : String], grade: String) {
         var creditsMutable = credits
         
@@ -144,13 +150,12 @@ extension MemberProfileViewController: ProfileUpdatesDelegate{
         //take care of labels
         nameLabel.text = firstN + " " + lastN
         gradeLabel.text = grade
-        nameLabel.alpha = 1.0
-        gradeLabel.alpha = 0.7
+        noCreditsLabel.alpha = 0
     }
 }
 
 extension MemberProfileViewController: PieChartDelegate{
     func onSelected(slice: PieSlice, selected: Bool) {
-        print("selected")
+//        print("selected")
     }
 }

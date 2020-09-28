@@ -10,6 +10,8 @@ import UIKit
 
 class AttendanceTableViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var attendanceDate: UILabel!
+    @IBOutlet weak var attendanceState: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

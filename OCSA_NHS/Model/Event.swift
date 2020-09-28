@@ -24,6 +24,7 @@ class Event: NSObject{
     
     var waiverLink: URL?
     var signupGeniusLink: URL?
+    var completeEventLink: URL?
     
     init(dictionary: [String: AnyObject]) {
         super.init()
@@ -40,5 +41,6 @@ class Event: NSObject{
         
         self.waiverLink = URL(string: dictionary["waiverLink"] as? String ?? "")
         self.signupGeniusLink = URL(string: dictionary["signupGeniusLink"] as? String ?? "")
+        self.completeEventLink = URL(string: dictionary["completeEventLink"] as? String ?? "")
     }
 }
